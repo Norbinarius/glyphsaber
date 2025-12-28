@@ -1,0 +1,152 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/nothingForeground">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:fontFamily="@font/ndot55"
+            android:text="Settings"
+            android:paddingRight="30dp"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"/>
+
+        <Button
+            android:id="@+id/backBtn"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="start"
+            android:background="@drawable/back_button">
+        </Button>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="5dp">
+
+            <!-- things to scroll -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:fontFamily="@font/ndot55"
+                android:text="Saber style"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/darkGrey" />
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/radio_saber_style"
+                android:paddingLeft="20dp"
+                android:orientation="vertical">
+                <RadioButton android:id="@+id/radio_green"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Green"
+                    android:padding="5dp"
+                    android:textSize="17sp"
+                    android:button="@drawable/radiobutton_normal"
+                    android:tag="green"
+                    android:textColor="@color/white"/>
+                <RadioButton android:id="@+id/radio_blue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Blue"
+                    android:tag="blue"
+                    android:padding="5dp"
+                    android:textSize="17sp"
+                    android:button="@drawable/radiobutton_normal"
+                    android:textColor="@color/white"/>
+                <RadioButton android:id="@+id/radio_red"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Red"
+                    android:tag="red"
+                    android:padding="5dp"
+                    android:textSize="17sp"
+                    android:button="@drawable/radiobutton_normal"
+                    android:textColor="@color/white"/>
+                <RadioButton android:id="@+id/radio_cg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Crossguard"
+                    android:tag="cg"
+                    android:padding="5dp"
+                    android:textSize="17sp"
+                    android:button="@drawable/radiobutton_normal"
+                    android:textColor="@color/white"/>
+                <RadioButton android:id="@+id/radio_dual"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dual"
+                    android:tag="dual"
+                    android:padding="5dp"
+                    android:textSize="17sp"
+                    android:button="@drawable/radiobutton_normal"
+                    android:textColor="@color/white"/>
+            </RadioGroup>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:text="@string/saberStyleHint"
+                android:textColor="@color/brightGrey"
+                android:textSize="15sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:fontFamily="@font/ndot55"
+                android:text="Other"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/darkGrey" />
+
+            <Switch
+                android:id="@+id/switchVolumeBtns"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:thumbTint="@color/white"
+                android:trackTintMode="src_over"
+                android:trackTint="@drawable/settings_switch"
+                android:checked="true"
+                android:text="Volume buttons hook"
+                android:paddingLeft="10dp"
+                android:textSize="17sp"
+                android:textColor="@color/white"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:text="@string/volumeButtonsHint"
+                android:textColor="@color/brightGrey"
+                android:textSize="15sp"/>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
