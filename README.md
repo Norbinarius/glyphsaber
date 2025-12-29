@@ -13,5 +13,5 @@ Nothing OS 4.0 is required, on older versions nothing-glyph-api won't intialize.
 
 ## Install
 
-Download latesest version: https://github.com/Norbinarius/glyphsaber/blob/main/app/release/app-release.apk
+Download latest version: https://github.com/Norbinarius/glyphsaber/blob/main/app/release/app-release.apk
 
