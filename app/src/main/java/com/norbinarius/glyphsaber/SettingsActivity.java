@@ -1,11 +1,7 @@
 package com.norbinarius.glyphsaber;
 
-import static android.app.PendingIntent.getActivity;
 import static android.view.View.INVISIBLE;
-
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -13,11 +9,8 @@ import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Switch;
-import android.widget.Toast;
-
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.nothing.ketchum.Glyph;
 
 public class SettingsActivity extends AppCompatActivity {
@@ -28,8 +21,9 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity);
-        LoadSettingValues();
+        switchVolumeHook = (Switch) findViewById(R.id.switchVolumeBtns);
         RadioGroup radioGroupGender = (RadioGroup) findViewById(R.id.radio_saber_style);
+        LoadSettingValues();
 
         radioGroupGender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -61,7 +55,6 @@ public class SettingsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        switchVolumeHook = (Switch) findViewById(R.id.switchVolumeBtns);
         switchVolumeHook.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -96,6 +89,7 @@ public class SettingsActivity extends AppCompatActivity {
         if(saberStyle.equals(SABER_STYLES[4])){
             radioGroupGender.check(R.id.radio_dual);
         }
+        switchVolumeHook.setChecked(SharedPreferencesManager.getInstance(SettingsActivity.this).getVolumeHook());
     }
 
 }
