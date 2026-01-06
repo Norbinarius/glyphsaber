@@ -1,5 +1,5 @@
 # glyphsaber for your nothing phone 
----
+![til](https://github.com/Norbinarius/glyphsaber/blob/main/app/src/main/glyphsaber_demo.gif)
 ## Requierments
 
 Nothing OS 4.0 is required, on older versions nothing-glyph-api won't intialize.
