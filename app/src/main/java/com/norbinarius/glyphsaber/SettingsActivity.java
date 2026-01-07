@@ -65,7 +65,7 @@ public class SettingsActivity extends AppCompatActivity {
 
     private void LoadSettingValues(){
         if(!Build.MODEL.equals(Glyph.DEVICE_22111) || !Build.MODEL.equals(Glyph.DEVICE_22111I) ||
-                !Build.MODEL.equals(Glyph.DEVICE_24111)){
+                !Build.MODEL.contains(Glyph.DEVICE_24111)){
             RadioButton rb_dual = (RadioButton) findViewById(R.id.radio_dual);
             rb_dual.setEnabled(false);
             rb_dual.setVisibility(INVISIBLE);

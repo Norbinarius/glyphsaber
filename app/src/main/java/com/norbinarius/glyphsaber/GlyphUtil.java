@@ -3,12 +3,10 @@ package com.norbinarius.glyphsaber;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.media.SoundPool;
 import android.os.Build;
 
 import com.nothing.ketchum.Common;
 import com.nothing.ketchum.Glyph;
-import com.nothing.ketchum.GlyphFrame;
 import com.nothing.ketchum.GlyphManager;
 
 public class GlyphUtil {
@@ -57,12 +55,13 @@ public class GlyphUtil {
     }
 
     public void setChannelSizes(GlyphManager mGM){
+        /* NOTHING PHONE 1 Running on Nothing OS 3.0
         if (Common.is20111()) { // Phone 1 one channel
             mGM.register(Glyph.DEVICE_20111);
             MainActivity.mainChannelSize = 8;
             MainActivity.mainChannelStartIndex = 7;
             MainActivity.mainChannelLastIndex = 14;
-        }
+        } */
         if (Common.is22111()) { //Phone 2 dual channel
             mGM.register(Glyph.DEVICE_22111);
             MainActivity.mainChannelSize = 16;
@@ -99,21 +98,21 @@ public class GlyphUtil {
     }
 
     public void compatibilityCheck(Activity context){
-        if(!Build.MODEL.equals(Glyph.DEVICE_20111) && !Build.MODEL.equals(Glyph.DEVICE_22111) &&
-                !Build.MODEL.equals(Glyph.DEVICE_23111) && !Build.MODEL.equals(Glyph.DEVICE_24111) &&
+        if(!Build.MODEL.equals(Glyph.DEVICE_22111) && !Build.MODEL.equals(Glyph.DEVICE_23111) &&
+                !Build.MODEL.contains(Glyph.DEVICE_24111) &&
                 !Build.MODEL.equals(Glyph.DEVICE_23113) && !Build.MODEL.equals(Glyph.DEVICE_22111I)){
-            AlertDialog alertDialog = new AlertDialog.Builder(context).create();
-            alertDialog.setTitle("Unsupported phone");
-            alertDialog.setCancelable(false);
-            alertDialog.setMessage("This app supports only Nothing Phone 1/2, Phone 2a/2a Plus and 3a/3a pro");
-            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "EXIT",
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                            context.finish();
-                        }
-                    });
-            alertDialog.show();
+                AlertDialog alertDialog = new AlertDialog.Builder(context).create();
+                alertDialog.setTitle("Unsupported phone");
+                alertDialog.setCancelable(false);
+                alertDialog.setMessage("This app supports only Nothing Phone 2, Phone 2a/2a Plus and 3a/3a pro");
+                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "EXIT",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                                context.finish();
+                            }
+                        });
+                alertDialog.show();
         }
     }
 }

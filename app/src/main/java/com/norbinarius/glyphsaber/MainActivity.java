@@ -5,14 +5,12 @@ import android.content.Intent;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
-import android.os.Debug;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.SystemClock;
 import android.util.Log;
 import android.view.View;
 
-import com.nothing.ketchum.Glyph;
 import com.nothing.ketchum.GlyphException;
 import com.nothing.ketchum.GlyphFrame;
 import com.nothing.ketchum.GlyphManager;
@@ -21,7 +19,6 @@ import androidx.appcompat.widget.SwitchCompat;
 
 import android.view.KeyEvent;
 import android.widget.CompoundButton;
-import android.widget.Toast;
 
 import java.util.concurrent.ThreadLocalRandom;
 
