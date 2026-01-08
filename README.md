@@ -10,9 +10,9 @@ Nothing Phone 1 will not receive Nothing OS 4.0 because it has reached the end o
 |:---------|:-----:|:-----:|
 | Nothing Phone 2 | ✅ | ✅ | |
 | Nothing Phone 2a | ✅ | ✅ | |
-| Nothing Phone 2a plus | ✅ | ❌ Waiting for testers to confirm | |
+| Nothing Phone 2a plus | ✅ | ✅| |
 | Nothing Phone 3a | ✅ | ✅ |
-| Nothing Phone 3a pro | ✅ Fixed | ❌ Waiting for testers to confirm|
+| Nothing Phone 3a pro | ✅ | ✅|
 
 ## Install
 
